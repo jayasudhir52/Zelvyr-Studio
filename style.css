@@ -1,0 +1,15 @@
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:1.4rem;
+font-weight:700;
+color:#D4AF37;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+}
