@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zelvyr Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#D4AF37;--bg:#050505;--glass:rgba(255,255,255,.06);--border:rgba(255,255,255,.12)}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth}
+body{background:var(--bg);color:#fff;overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.45);backdrop-filter:blur(18px);z-index:1000}
+.logo{display:flex;align-items:center;gap:12px;font-size:1.4rem;font-weight:700;color:var(--gold)}
+.logo img{width:50px;height:50px;border-radius:50%;object-fit:cover}
+nav ul{display:flex;gap:24px;list-style:none}
+nav a{color:#fff;text-decoration:none}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;background:radial-gradient(circle at center,#222 0%,#050505 60%)}
+.hero h1{font-size:4.5rem}.gold{color:var(--gold)}
+.btn{background:var(--gold);color:#000;padding:14px 28px;border-radius:40px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
+section{padding:90px 8%}
+.title{text-align:center;color:var(--gold);margin-bottom:35px}
+.glass{background:var(--glass);border:1px solid var(--border);backdrop-filter:blur(20px);border-radius:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.card{padding:24px;transition:.3s}.card:hover{transform:translateY(-8px)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+.stat{text-align:center;padding:25px}
+.counter{font-size:2.4rem;color:var(--gold);font-weight:700}
+.filter{text-align:center;margin-bottom:25px}.filter button{margin:5px;padding:10px 18px;border:none;border-radius:20px;background:#222;color:#fff;cursor:pointer}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+input,textarea{width:100%;padding:14px;margin:8px 0;background:#111;border:none;color:#fff;border-radius:12px}
+footer{text-align:center;padding:40px}
+.reveal{opacity:0;transform:translateY(40px);transition:1s}.reveal.show{opacity:1;transform:none}
+#status{margin-top:10px}
+#contact{scroll-margin-top:90px;}
+@media(max-width:768px){.hero h1{font-size:2.8rem}.contact-wrap{grid-template-columns:1fr}nav ul{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">
+<img src="logo.jpg" alt="Logo">
+<span>Zelvyr Studio</span>
+</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+<div>
+<img src="logo.jpg" alt="Logo" style="width:140px;height:140px;border-radius:50%;margin-bottom:20px;border:3px solid #D4AF37;">
+<h1><span class="gold">ZELVYR</span> STUDIO</h1>
+<p>Premium Project Development • Websites • Apps • AI Solutions</p><br>
+<a href="#contact" class="btn">Start a Project</a>
+</div>
+</section>
+
+
+
+<section id="services">
+<h2 class="title reveal">Services</h2>
+<div class="grid">
+<div class="glass card reveal">Web Development</div>
+<div class="glass card reveal">Mobile Applications</div>
+<div class="glass card reveal">AI Projects</div>
+<div class="glass card reveal">Business Dashboards</div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="title reveal">Projects</h2>
+<div class="filter">
+<button onclick="filterProjects('all')">All</button>
+<button onclick="filterProjects('web')">Web</button>
+<button onclick="filterProjects('app')">Apps</button>
+<button onclick="filterProjects('ai')">AI</button>
+</div>
+<div class="grid">
+<div class="glass card project web">Portfolio Website</div>
+<div class="glass card project app">Android App</div>
+<div class="glass card project ai">AI Assistant</div>
+<div class="glass card project web">Business Portal</div>
+</div>
+</section>
+
+
+
+
+
+<section id="contact">
+<h2 class="title reveal">Contact Us</h2>
+<div class="contact-wrap">
+<div class="glass card">
+<form id="contactForm">
+<input id="name" placeholder="Name" required>
+<input id="email" type="email" placeholder="Email" required>
+<input id="phone" placeholder="Phone" required>
+<textarea id="message" rows="5" placeholder="Project Details" required></textarea>
+<button class="btn" id="submitBtn" type="submit">Send Inquiry</button>
+<div id="status"></div>
+</form>
+</div>
+
+<div class="glass card" style="grid-column:1/-1;">
+<h3>Contact Information</h3><br>
+<p>Sudhir S</p>
+<p>📞 +91 87780 46822</p>
+<p>Yokesh S</p>
+<p>📞 +91 79042 74423</p>
+<p>🕘 09:00 AM – 08:00 PM</p>
+<p>💬 WhatsApp Available</p>
+</div>
+
+</div>
+<footer>
+<img src="logo.jpg" alt="Logo" style="width:70px;height:70px;border-radius:50%;margin-bottom:15px;">
+<h3 style="color:#D4AF37;">Zelvyr Studio</h3>
+<p>Premium Digital Solutions</p>
+<p>© 2026 Zelvyr Studio</p>
+</footer>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init({publicKey:"nbXFkQ4b8wcT0RxCb"});
+
+document.querySelectorAll('.counter').forEach(c=>{
+ let t=+c.dataset.target,n=0;
+ let i=setInterval(()=>{n+=Math.ceil(t/50);if(n>=t){n=t;clearInterval(i)}c.textContent=n+"+"},30);
+});
+
+function filterProjects(type){
+ document.querySelectorAll('.project').forEach(p=>{
+  p.style.display=(type==='all'||p.classList.contains(type))?'block':'none';
+ });
+}
+
+document.getElementById('contactForm').addEventListener('submit',async e=>{
+ e.preventDefault();
+ const status=document.getElementById('status');
+ const btn=document.getElementById('submitBtn');
+ status.innerHTML='Sending...';
+ btn.disabled=true;
+
+ try{
+  await emailjs.send('service_3vzq0th','template_5tewwuf',{
+   from_name: document.getElementById('name').value,
+   from_email: document.getElementById('email').value,
+   phone: document.getElementById('phone').value,
+   message: document.getElementById('message').value
+  });
+
+  status.innerHTML='✅ Inquiry sent successfully';
+  e.target.reset();
+ }catch(err){
+  console.error(err);
+  status.innerHTML='❌ Failed to send inquiry';
+ }
+ btn.disabled=false;
+});
+
+const obs=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')}));
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
